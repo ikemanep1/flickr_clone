@@ -3,5 +3,7 @@
 <%= form_for @image do |f| %>
   <%= f.label :name %>
   <%= f.text_area :name %>
+  <%= f.label :flickr_picture %>
+  <%= f.file_field :flickr_picture %>
   <%= f.submit  %>
 <% end %>

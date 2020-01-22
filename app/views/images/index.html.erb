@@ -1,13 +1,11 @@
 
 <div class="user_content">
 <h1>Images</h1>
-
 <% if @images.any? %>
   <ul>
     <% @images.each do |image| %>
       <li><%= link_to image.name, image_path(image) %></li>
-      <button type="button" id="add" name="upvote">Upvote this image!</button>
-      <button type="button" id="subtract" name="downvote">Downvote this image!</button>
+      <%= image_tag @image.flickr_picture %>
     <% end %>
   </ul>
 <% else %>
