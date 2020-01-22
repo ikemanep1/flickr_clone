@@ -23,5 +23,6 @@ Things you may want to cover:
 
 * ...
 
-
-<%= image_tag @image.flickr_picture %>
+Line 7 index
+<li><%= link_to image.name, image_path(image) %></li>
+ <%= image_tag(current_user.profile_picture) %><h3><%= current_user.email %></h3>

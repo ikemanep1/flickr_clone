@@ -1,18 +1,20 @@
-
 <div class="user_content">
-<h1>Images</h1>
-<% if @images.any? %>
-  <ul>
+    <h1>Images</h1>
+    <% if @images.any? %>
     <% @images.each do |image| %>
-      <li><%= link_to image.name, image_path(image) %></li>
-      <%= image_tag @image.flickr_picture %>
+    <div>
+        <% if image.profile_picture.attached? %>
+        <%= link_to image.name, image_path(image) %>
+        <%= image_tag image.profile_picture %>
+        <h3><%= current_user.email %></h3>
+        <% else %>
+        <% end %>
+    </div>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no images yet.</p>
-<% end %>
+    <p>There are no images yet.</p>
+    <% end %>
 
-<% if current_user %>
-<p><%= link_to "Create new image", new_image_path %></p>
+    <% if current_user %>
+    <p><%= link_to "Create new image", new_image_path %></p>
 </div>
 <% end %>
