@@ -1,0 +1,24 @@
+<h1><%= @image.name %></h1>
+
+<% if @image.tags.any? %>
+  <h4>Here are the tags for this image:</h4>
+
+  <% @image.tags.each do |tag| %>
+    <ul>
+      <li>
+        <%= link_to tag.content, image_tag_path(@image, tag) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No tags are listed for this image.</p>
+<% end %>
+
+<p><%= link_to "Add a tag", new_image_tag_path(@image) %></p>
+
+<p><%= link_to "Edit", edit_image_path(@image) %></p>
+<p><%= link_to "Delete image", image_path(@image),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to images", images_path %></p>
