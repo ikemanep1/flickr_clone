@@ -6,7 +6,7 @@
   <% @image.tags.each do |tag| %>
     <ul>
       <li>
-        <%= link_to tag.content, image_tag_path(@image, tag) %>
+        <%= link_to tag.name, image_tag_path(@image, tag) %>
       </li>
     </ul>
   <% end %>

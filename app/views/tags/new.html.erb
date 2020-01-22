@@ -1,5 +1,7 @@
 <h1>Add a new tag:</h1>
 
 <%= form_for [@image, @tag] do |f| %>
+<%= f.label :name %>
+<%= f.text_area :name %>
   <p><%= f.submit %></p>
 <% end %>
