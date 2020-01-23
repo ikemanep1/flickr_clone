@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :images do
     resources :tags
   end
+  
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/account/:id' => 'users#show', :as => :user

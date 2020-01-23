@@ -4,8 +4,10 @@
     <% @images.each do |image| %>
     <div>
         <% if image.profile_picture.attached? %>
-        <%= link_to image.name, image_path(image) %>
+        <br>
+        <br>
         <%= image_tag image.profile_picture %>
+        <p><%= link_to "Edit", edit_image_path(image) %></p>
         <h3><%= current_user.email %></h3>
         <% else %>
         <% end %>
@@ -14,7 +16,9 @@
     <p>There are no images yet.</p>
     <% end %>
 
+
     <% if current_user %>
     <p><%= link_to "Create new image", new_image_path %></p>
+<p><%= link_to "Return to images", images_path %></p>
 </div>
 <% end %>

@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
     def new
       @image = Image.new
       render :new
+      binding.pry
     end
 
     def create
