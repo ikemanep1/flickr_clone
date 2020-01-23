@@ -8,7 +8,6 @@ class ImagesController < ApplicationController
     def new
       @image = Image.new
       render :new
-      binding.pry
     end
 
     def create
@@ -47,7 +46,7 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image).permit(:name, :profile_picture, :favorites)
+    params.require(:image).permit(:name, :profile_picture, :favorites, :comment)
   end
 
 end

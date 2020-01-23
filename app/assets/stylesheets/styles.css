@@ -1,7 +1,26 @@
 .container {
   padding-top: 80px;
-  padding-left: 80px;
 }
+
 img{
-  width: 30%;
+  /* width: 20%; */
+  max-height: 250px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: flex;
+}
+
+.title {
+  text-align:center;
+}
+
+.image-wrapper {
+  display: flex;
 }

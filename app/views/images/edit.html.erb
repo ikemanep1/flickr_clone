@@ -3,7 +3,8 @@
 <%= form_for @image do |f| %>
   <%= f.label :name %>
   <%= f.text_area :name %>
-  <%= f.label :profile_picture %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
   <%= f.file_field :profile_picture %>
   <%= f.submit  %>
 <% end %>

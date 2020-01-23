@@ -1,24 +1,28 @@
-<div class="user_content">
-    <h1>Images</h1>
-    <% if @images.any? %>
+<h1 class="title">Images</h1>
+<hr>
+<% if @images.any? %>
+  <div class="image-wrapper">
     <% @images.each do |image| %>
-    <div>
+      <div>
         <% if image.profile_picture.attached? %>
-        <br>
-        <br>
-        <%= image_tag image.profile_picture %>
-        <p><%= link_to "Edit", edit_image_path(image) %></p>
-        <h3><%= current_user.email %></h3>
+          <br>
+          <br>
+          <div>
+            <%= image_tag image.profile_picture %>
+            <br>
+          </div>
+          <h3><%= current_user.email %></h3>
+          <h4>Comments:</h4>
+          <p><%= image.comment %></p>
+          <p><%= link_to "Edit Image!", edit_image_path(image) %></p>
         <% else %>
         <% end %>
-    </div>
+      </div>
     <% end %>
-    <p>There are no images yet.</p>
-    <% end %>
-
-
-    <% if current_user %>
-    <p><%= link_to "Create new image", new_image_path %></p>
-<p><%= link_to "Return to images", images_path %></p>
-</div>
+  </div>
+<% end %>
+<hr>
+<% if current_user %>
+  <p><%= link_to "Create new image", new_image_path %></p>
+  <p><%= link_to "Return to images", images_path %></p>
 <% end %>
