@@ -1,26 +1,31 @@
 .container {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 img{
-  /* width: 20%; */
+  padding: 10px;
   max-height: 250px;
 }
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: flex;
-}
+
 
 .title {
-  text-align:center;
+  padding-left: 10px;
 }
 
 .image-wrapper {
   display: flex;
+}
+
+.nav-bar-top {
+    min-width: 100%;
+    background-color: #02654F;
+    height: 75px;
+}
+
+.nav-bar-title {
+    color: white;
+    font-size: 28px;
+    float: right;
+    padding-right: 50px;
+    padding-top: 15px;
 }

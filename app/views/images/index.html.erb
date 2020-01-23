@@ -1,17 +1,15 @@
-<h1 class="title">Images</h1>
+<h1 class="title">Photos</h1>
 <hr>
 <% if @images.any? %>
   <div class="image-wrapper">
     <% @images.each do |image| %>
       <div>
         <% if image.profile_picture.attached? %>
-          <br>
-          <br>
           <div>
             <%= image_tag image.profile_picture %>
             <br>
           </div>
-          <h3><%= current_user.email %></h3>
+          <p><%= image.name %></p>
           <h4>Comments:</h4>
           <p><%= image.comment %></p>
           <p><%= link_to "Edit Image!", edit_image_path(image) %></p>
