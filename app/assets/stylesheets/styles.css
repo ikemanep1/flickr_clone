@@ -5,6 +5,7 @@
 img{
   padding: 10px;
   max-height: 250px;
+  flex-grow: 1;
 }
 
 
@@ -13,7 +14,9 @@ img{
 }
 
 .image-wrapper {
+  margin: 100px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-bar-top {
